@@ -13,7 +13,8 @@ ENV PGUSER=postgres
 ENV PGPASSWORD=postgres
 
 WORKDIR /usr/local/bin
-COPY scripts/*       ./
+COPY backup.sh      backup
+COPY restore.sh     restore
 RUN  chmod 555 *.sh
 
 WORKDIR /tmp
