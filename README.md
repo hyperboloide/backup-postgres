@@ -27,6 +27,6 @@ docker run \
         -e PGHOST=postgres
         -e PGUSER=user
         -e PGPASSWORD=passwd \
-        hyperboloide/backup-password \
+        hyperboloide/backup-postgres \
         restore
 ```
