@@ -9,8 +9,8 @@ docker run \
         -v ~/.aws:/aws \
         --link postgres:postgres \
         -e BUCKET=s3://bucket.example.com
-        -e PGHOST=postgres
-        -e PGUSER=user
+        -e PGHOST=postgres \
+        -e PGUSER=user \
         -e PGPASSWORD=passwd \
         hyperboloide/backup-postgres \
         backup
@@ -23,9 +23,9 @@ docker run \
         --rm -ti \
         -v ~/.aws:/aws \
         --link postgres-restore:postgres \
-        -e BUCKET=s3://bucket.example.com
-        -e PGHOST=postgres
-        -e PGUSER=user
+        -e BUCKET=s3://bucket.example.com \
+        -e PGHOST=postgres \
+        -e PGUSER=user \
         -e PGPASSWORD=passwd \
         hyperboloide/backup-postgres \
         restore
