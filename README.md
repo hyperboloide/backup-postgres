@@ -22,7 +22,7 @@ docker run \
 docker run \
         --rm -ti \
         -v ~/.aws:/aws \
-        --link postgres-restore:postgres \
+        --link postgres:postgres \
         -e BUCKET=s3://bucket.example.com \
         -e PGHOST=postgres \
         -e PGUSER=user \
