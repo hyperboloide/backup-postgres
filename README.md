@@ -8,7 +8,7 @@ docker run \
         --rm \
         -v ~/.aws:/aws \
         --link postgres:postgres \
-        -e BUCKET=s3://bucket.example.com
+        -e BUCKET=s3://bucket.example.com \
         -e PGHOST=postgres \
         -e PGUSER=user \
         -e PGPASSWORD=passwd \
