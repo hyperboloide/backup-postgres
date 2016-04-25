@@ -4,6 +4,7 @@ A simple Docker container to create and encrypted backup of PostgreSQL to S3.
 ### Backup PostgreSQL
 
 ```
+
 docker run --rm \
         -v ~/.aws:/aws \
         --link postgres:postgres \
@@ -19,7 +20,8 @@ docker run --rm \
 ### Restore PostgreSQL
 
 ```
-docker run --rm -ti \
+docker run \
+        --rm -ti \
         -v ~/.aws:/aws \
         --link postgres-restore:postgres \
         -e BUCKET=s3://bucket.example.com \
@@ -27,6 +29,6 @@ docker run --rm -ti \
         -e PGHOST=postgres \
         -e PGUSER=user \
         -e PGPASSWORD=passwd \
-        hyperboloide/backup-password \
+        hyperboloide/backup-postgres \
         restore
 ```

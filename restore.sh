@@ -2,7 +2,7 @@
 
 set -e
 
-aws s3 ls $BUCKET/postgres/
+aws s3 ls $BUCKET/$BUCKET_DIR/
 
 echo "Select a backup:"
 
