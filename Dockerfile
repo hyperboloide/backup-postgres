@@ -15,11 +15,11 @@ ENV PGPASSWORD=postgres
 WORKDIR /usr/local/bin
 COPY backup.sh      backup
 COPY restore.sh     restore
-RUN  chmod 555 *.sh
+RUN  chmod 555 *
 
 WORKDIR /tmp
 RUN apt-get update -qq && \
-    apt-get install -qqy curl unzip python \
+    apt-get install -qqy curl unzip python openssl \
     && apt-get clean \
     && curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" \
     && unzip awscli-bundle.zip \
